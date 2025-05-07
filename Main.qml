@@ -1,6 +1,8 @@
 import QtQuick
 import QtQuick.Controls 2.15
+import QtQuick.Controls.Basic
 import QtQuick.Effects
+
 
 ApplicationWindow  {
 
@@ -8,25 +10,37 @@ ApplicationWindow  {
     height: 480
     visible: true
     title: qsTr("Music Player")
-    color: green;
+    color: 'white';
 
     Rectangle {
-    anchors.centerIn: parent
-    id: qwindow
+        width: 500
+        height: 450
+        anchors.centerIn: parent
+        id: recMain
+        color: 'transparent'
 
-
+        MultiEffect {
+                  anchors.fill: parent
+                  source: parent
+                  opacity: 0.8
+        }
 
     Button {
+        id: btnMain
+        anchors.centerIn: parent
+        text: "Click"
 
-        text: "Click";
+        MultiEffect {
+                  anchors.fill: btnMain
+                  source: btnMain
+                  blurEnabled: true
+                  blur: 1
+
+              }
     }
 }
 
-    MultiEffect {
-    opacity: 30
-    source: qwindow
-    blur: 30
-    }
+
 }
 
 
