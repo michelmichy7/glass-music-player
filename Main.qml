@@ -11,36 +11,32 @@ ApplicationWindow  {
     visible: true
     title: qsTr("Music Player")
     color: 'white';
+    id: windowqq
 
-    Rectangle {
-        width: 500
-        height: 450
-        anchors.centerIn: parent
-        id: recMain
-        color: 'transparent'
+    Column {
+        anchors.horizontalCenter: parent
+        anchors.bottom: parent.bottom
+        width: parent.width
+        height: 100
 
-        MultiEffect {
-                  anchors.fill: parent
-                  source: parent
-                  opacity: 0.8
+        Grid {
+            anchors.horizontalCenter: parent
+            width: parent.width
+            height: 100
+                Rectangle {
+
+                    color: 'blue'
+                    width: parent.width
+                    height: parent.height
+
+                    Button {
+                        anchors.centerIn: parent
+                        id: btnMain
+                        text: "►"
+                    }
+                }
         }
-
-    Button {
-        id: btnMain
-        anchors.centerIn: parent
-        text: "Click"
-
-        MultiEffect {
-                  anchors.fill: btnMain
-                  source: btnMain
-                  blurEnabled: true
-                  blur: 1
-
-              }
     }
-}
-
-
 }
 
 
