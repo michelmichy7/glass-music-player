@@ -23,17 +23,26 @@ ApplicationWindow  {
             anchors.horizontalCenter: parent
             width: parent.width
             height: 100
+            spacing: 20
+            columns: 2
                 Rectangle {
 
                     color: 'blue'
-                    width: parent.width
-                    height: parent.height
 
-                    Button {
+                    Column {
+                        spacing: 10
                         anchors.centerIn: parent
-                        id: btnMain
-                        text: "►"
+                        Button {
+                            id: btnMain
+                            text: "►"
+                        }
+
+                        Slider {
+
+                        }
                     }
+
+
                 }
         }
     }
