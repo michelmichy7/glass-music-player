@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Controls 2.15
 import QtQuick.Controls.Basic
 import QtQuick.Effects
+import QtQuick.Layouts
 
 
 ApplicationWindow  {
@@ -14,37 +15,40 @@ ApplicationWindow  {
     id: windowqq
 
     Column {
-        anchors.horizontalCenter: parent
-        anchors.bottom: parent.bottom
+    anchors.bottom: parent.bottom
+    anchors.bottomMargin: 100
+
+    width: parent.width
+    height: parent.height
+
+    Rectangle {
         width: parent.width
+        height: parent.height
+        color: "#252725"
+    }
+    }
+
+    Rectangle {
+        anchors.bottom: parent.bottom
+        anchors.horizontalCenter: parent.horizontalCenter
         height: 100
+        width: parent.width
+        color: "#0E0F0E"
 
-        Grid {
-            anchors.horizontalCenter: parent
-            width: parent.width
-            height: 100
-            spacing: 20
-            columns: 2
-                Rectangle {
 
-                    color: 'blue'
+        ColumnLayout {
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.bottom: parent.bottom
+            height: parent.height
 
-                    Column {
-                        spacing: 10
-                        anchors.centerIn: parent
-                        Button {
-                            id: btnMain
-                            text: "►"
-                        }
-
-                        Slider {
-
-                        }
-                    }
-
+                Button {
+                    Layout.alignment: Qt.AlignHCenter
+                    text: "►"
+                }
+                Slider {
 
                 }
-        }
+            }
     }
 }
 
