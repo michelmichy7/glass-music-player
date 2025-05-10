@@ -1,13 +1,16 @@
 import QtQuick 2.15
 import QtQuick.Controls
 
-Button {
-    id: playbutton
-    width: 50
-    height: 50
+Image {
+    width: 34
+    height: 34
 
-    background: Rectangle {
-        radius: 10
+    Image {
+        id: playIcon
+        source: "qrc:/Customizations/Icons/Pause.svg"
 
+        anchors.fill: parent
+        fillMode: Image.PreserveAspectFit
+        smooth: true
     }
 }

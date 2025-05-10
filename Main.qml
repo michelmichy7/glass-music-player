@@ -18,7 +18,7 @@ ApplicationWindow  {
 
     Column {
     anchors.bottom: parent.bottom
-    anchors.bottomMargin: 100
+    anchors.bottomMargin: 90
 
     width: parent.width
     height: parent.height
@@ -26,16 +26,16 @@ ApplicationWindow  {
     Rectangle {
         width: parent.width
         height: parent.height
-        color: "#252725"
+        color: "white"
     }
     }
 
     Rectangle {
         anchors.bottom: parent.bottom
         anchors.horizontalCenter: parent.horizontalCenter
-        height: 100
+        height: 90
         width: parent.width
-        color: "#0E0F0E"
+        color: "#EBEBEB"
 
 
         ColumnLayout {
@@ -43,13 +43,12 @@ ApplicationWindow  {
             anchors.bottom: parent.bottom
             height: parent.height
             Row {
+                topPadding: 10
                 spacing: 10
                 Button {
 
                 }
                 PlayButton {
-                    Layout.alignment: Qt.AlignHCenter
-                    text: "►"
                 }
                 Button {
 
