@@ -4,6 +4,8 @@ import QtQuick.Controls.Basic
 import QtQuick.Effects
 import QtQuick.Layouts
 
+import "Customizations"
+
 
 ApplicationWindow  {
 
@@ -40,13 +42,22 @@ ApplicationWindow  {
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.bottom: parent.bottom
             height: parent.height
-
+            Row {
+                spacing: 10
                 Button {
+
+                }
+                PlayButton {
                     Layout.alignment: Qt.AlignHCenter
                     text: "►"
                 }
-                Slider {
+                Button {
 
+                }
+            }
+
+                Slider {
+                    Layout.alignment: Qt.AlignHCenter
                 }
             }
     }
