@@ -1,8 +1,8 @@
 import QtQuick 2.15
 
 Item {
-    width: 13
-    height: 19
+    width: 24
+    height: 24
 
 
     Image {

@@ -23,11 +23,11 @@ ApplicationWindow  {
     width: parent.width
     height: parent.height
 
-    Rectangle {
-        width: parent.width
-        height: parent.height
-        color: "white"
-    }
+        Rectangle {
+            width: parent.width
+            height: parent.height
+            color: "white"
+        }
     }
 
     Rectangle {
@@ -42,11 +42,11 @@ ApplicationWindow  {
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.bottom: parent.bottom
             height: parent.height
+
+
             Row {
-
-
                 topPadding: 20
-                spacing: 10
+                spacing: 20
                 anchors.horizontalCenter: parent.horizontalCenter
                 PreviousButton {
                 }
