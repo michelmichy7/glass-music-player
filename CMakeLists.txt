@@ -15,9 +15,23 @@ qt_add_executable(appglass-music-player
 qt_add_qml_module(appglass-music-player
     URI glass-music-player
     VERSION 1.0
-    QML_FILES
-        Main.qml
-)
+
+
+        QML_FILES
+            Main.qml
+            Customizations/PlayButton.qml
+            Customizations/PreviousButton.qml
+            QML_FILES Customizations/NextButton.qml
+
+
+        )
+    qt_add_resources(appglass-music-player "resources"
+        PREFIX /
+        FILES
+            Customizations/Icons/Pause.svg
+            Customizations/Icons/Previous.svg
+            Customizations/Icons/Next.svg
+    )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an

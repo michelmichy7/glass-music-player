@@ -2,6 +2,9 @@ import QtQuick
 import QtQuick.Controls 2.15
 import QtQuick.Controls.Basic
 import QtQuick.Effects
+import QtQuick.Layouts
+
+import "Customizations"
 
 
 ApplicationWindow  {
@@ -11,36 +14,57 @@ ApplicationWindow  {
     visible: true
     title: qsTr("Music Player")
     color: 'white';
+    id: windowqq
 
-    Rectangle {
-        width: 500
-        height: 450
-        anchors.centerIn: parent
-        id: recMain
-        color: 'transparent'
+    //Main column layout
+    ColumnLayout {
+        anchors.fill: parent
+        // Main content rectangle
+        Rectangle {
+            Layout.fillWidth: true
+            Layout.preferredHeight: parent.height - 90
 
-        MultiEffect {
-                  anchors.fill: parent
-                  source: parent
-                  opacity: 0.8
+            color: "white"
+
         }
 
-    Button {
-        id: btnMain
-        anchors.centerIn: parent
-        text: "Click"
-
-        MultiEffect {
-                  anchors.fill: btnMain
-                  source: btnMain
-                  blurEnabled: true
-                  blur: 1
-
-              }
-    }
 }
 
 
+
+
+
+            // Bottom nav bar
+        Rectangle {
+        anchors.bottom: parent.bottom
+        anchors.horizontalCenter: parent.horizontalCenter
+        height: 90
+        width: parent.width
+        color: "#EBEBEB"
+
+
+        ColumnLayout {
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.bottom: parent.bottom
+            height: parent.height
+
+
+            Row {
+                spacing: 10
+                Layout.alignment: Qt.AlignHCenter
+
+                PreviousButton {
+                }
+                PlayButton {
+                }
+                NextButton {
+                }
+
+
+            }
+            Slider {
+               Layout.alignment: Qt.AlignHCenter
+           }
+        }
+        }
 }
-
-
