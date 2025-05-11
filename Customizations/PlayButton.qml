@@ -2,8 +2,8 @@ import QtQuick 2.15
 import QtQuick.Controls
 
 Item {
-    width: 34
-    height: 34
+    width: 50
+    height: 40
 
     Image {
         id: playIcon

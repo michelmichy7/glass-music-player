@@ -1,8 +1,8 @@
 import QtQuick 2.15
 
 Item {
-    width: 24
-    height: 24
+    width: 20
+    height: 30
 
 
     Image {
@@ -10,5 +10,6 @@ Item {
         anchors.fill: parent
         fillMode: Image.PreserveAspectFit
         smooth: true
+        anchors.topMargin: 10
     }
 }

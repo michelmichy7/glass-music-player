@@ -16,34 +16,26 @@ ApplicationWindow  {
     color: 'white';
     id: windowqq
 
-    Column {
-    anchors.top: parent.top
-    anchors.bottomMargin: 90
-
-    width: parent.width
-    height: parent.height
-
+    //Main column layout
+    ColumnLayout {
+        anchors.fill: parent
+        // Main content rectangle
         Rectangle {
-            width: parent.width
-            height: parent.height
+            Layout.fillWidth: true
+            Layout.preferredHeight: parent.height - 90
+
             color: "white"
 
         }
 
-
-    }
-    Rectangle {
-        anchors.bottomMargin: 100
-        width: 300
-        height: 300
-               anchors.centerIn: parent
+}
 
 
 
-               color: "grey"
-               radius: 25
-           }
-    Rectangle {
+
+
+            // Bottom nav bar
+        Rectangle {
         anchors.bottom: parent.bottom
         anchors.horizontalCenter: parent.horizontalCenter
         height: 90
@@ -58,23 +50,21 @@ ApplicationWindow  {
 
 
             Row {
-                topPadding: 20
-                spacing: 20
-                anchors.horizontalCenter: parent.horizontalCenter
+                spacing: 10
+                Layout.alignment: Qt.AlignHCenter
+
                 PreviousButton {
                 }
                 PlayButton {
                 }
                 NextButton {
-
                 }
-            }
 
-                Slider {
-                    Layout.alignment: Qt.AlignHCenter
-                }
+
             }
-    }
+            Slider {
+               Layout.alignment: Qt.AlignHCenter
+           }
+        }
+        }
 }
-
-
