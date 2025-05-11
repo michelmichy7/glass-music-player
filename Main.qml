@@ -17,7 +17,7 @@ ApplicationWindow  {
     id: windowqq
 
     Column {
-    anchors.bottom: parent.bottom
+    anchors.top: parent.top
     anchors.bottomMargin: 90
 
     width: parent.width
@@ -27,9 +27,20 @@ ApplicationWindow  {
             width: parent.width
             height: parent.height
             color: "white"
-        }
-    }
 
+        }
+
+
+    }
+    Rectangle {
+        anchors.bottomMargin: 100
+        width: 300
+        height: 300
+               anchors.centerIn: parent
+
+               color: "grey"
+               radius: 25
+           }
     Rectangle {
         anchors.bottom: parent.bottom
         anchors.horizontalCenter: parent.horizontalCenter
