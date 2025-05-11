@@ -38,6 +38,8 @@ ApplicationWindow  {
         height: 300
                anchors.centerIn: parent
 
+
+
                color: "grey"
                radius: 25
            }
