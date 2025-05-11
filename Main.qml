@@ -43,14 +43,16 @@ ApplicationWindow  {
             anchors.bottom: parent.bottom
             height: parent.height
             Row {
-                topPadding: 10
-                spacing: 10
-                Button {
 
+
+                topPadding: 20
+                spacing: 10
+                anchors.horizontalCenter: parent.horizontalCenter
+                PreviousButton {
                 }
                 PlayButton {
                 }
-                Button {
+                NextButton {
 
                 }
             }

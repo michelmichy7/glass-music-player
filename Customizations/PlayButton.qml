@@ -1,7 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Controls
 
-Image {
+Item {
     width: 34
     height: 34
 

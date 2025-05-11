@@ -1,6 +1,8 @@
 <!-- resources.qrc -->
 <RCC>
     <qresource prefix="/">
-        <file>Customizations/Icons/Paused.png</file>
+        <file>Customizations/Icons/Paused.svg</file>
+        <file>Customizations/Icons/Previous.svg</file>
+        <file>Customizations/Icons/Next.svg
     </qresource>
 </RCC>
