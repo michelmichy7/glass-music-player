@@ -1,6 +1,6 @@
 import QtQuick
 import QtQuick.Controls 2.15
-import QtQuick.Controls.Basic
+import QtQuick.Controls.Imagine
 import QtQuick.Effects
 import QtQuick.Layouts
 
@@ -19,34 +19,46 @@ ApplicationWindow  {
     //Main column layout
     ColumnLayout {
         anchors.fill: parent
-        // Main content rectangle
-        Rectangle {
+        spacing: 0
+
+            // Main content rectangle
+        Item {
+            id: contentArea
+            Layout.fillHeight: true
             Layout.fillWidth: true
-            Layout.preferredHeight: parent.height - 90
+            //Layout.bottomMargin: 80
 
-            color: "white"
+            Rectangle {
+                color: "#D9D9D9"
+                anchors.fill: parent
+                 Layout.fillWidth: true
+                 Layout.fillHeight: true
+            }
 
-        }
-
-}
-
-
-
-
-
+           Rectangle {
+               id: albumCover
+               width: Math.min(parent.height, parent.width) * 0.5
+               height: width
+               radius: 29
+               anchors.centerIn: parent
+           }
+           ListView {
+               left: parent.left
+               bottom: parent.bottom
+               height: 100
+               width: 300
+           }
+    }
             // Bottom nav bar
         Rectangle {
-        anchors.bottom: parent.bottom
-        anchors.horizontalCenter: parent.horizontalCenter
-        height: 90
-        width: parent.width
-        color: "#EBEBEB"
+            Layout.fillWidth: parent
+            height: 90
+            width: parent.width
+            color: "#EBEBEB"
 
 
         ColumnLayout {
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.bottom: parent.bottom
-            height: parent.height
+            anchors.fill: parent
 
 
             Row {
@@ -67,4 +79,6 @@ ApplicationWindow  {
            }
         }
         }
+}
+
 }
