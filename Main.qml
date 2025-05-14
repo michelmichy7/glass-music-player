@@ -18,46 +18,47 @@ ApplicationWindow  {
 
     //Main column layout
     ColumnLayout {
-       anchors.top: parent.top
-       anchors.right: parent.right
-       anchors.left: parent.left
-       height: parent.height - 90
+        anchors.fill: parent
+        spacing: 0
 
-        // Main content rectangle
-        Rectangle {
-            Layout.fillWidth: true
+            // Main content rectangle
+        Item {
+            id: contentArea
             Layout.fillHeight: true
-            color: "#D9D9D9"
+            Layout.fillWidth: true
+            //Layout.bottomMargin: 80
 
             Rectangle {
-                width: Math.min(parent. height, parent.width) * 0.5
-                height: width
-                radius: 29
-
-                anchors.centerIn: parent
+                color: "#D9D9D9"
+                anchors.fill: parent
+                 Layout.fillWidth: true
+                 Layout.fillHeight: true
             }
-        }
 
-
-}
-
-
-
-
-
+           Rectangle {
+               id: albumCover
+               width: Math.min(parent.height, parent.width) * 0.5
+               height: width
+               radius: 29
+               anchors.centerIn: parent
+           }
+           ListView {
+               left: parent.left
+               bottom: parent.bottom
+               height: 100
+               width: 300
+           }
+    }
             // Bottom nav bar
         Rectangle {
-            anchors.bottom: parent.bottom
-            anchors.horizontalCenter: parent.horizontalCenter
+            Layout.fillWidth: parent
             height: 90
             width: parent.width
             color: "#EBEBEB"
 
 
         ColumnLayout {
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.bottom: parent.bottom
-            height: parent.height
+            anchors.fill: parent
 
 
             Row {
@@ -78,4 +79,6 @@ ApplicationWindow  {
            }
         }
         }
+}
+
 }
