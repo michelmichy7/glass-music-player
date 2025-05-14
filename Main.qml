@@ -26,28 +26,26 @@ ApplicationWindow  {
             id: contentArea
             Layout.fillHeight: true
             Layout.fillWidth: true
-            //Layout.bottomMargin: 80
 
             Rectangle {
                 color: "#D9D9D9"
                 anchors.fill: parent
-                 Layout.fillWidth: true
-                 Layout.fillHeight: true
+                Layout.fillWidth: true
+                Layout.fillHeight: true
             }
 
-           Rectangle {
-               id: albumCover
-               width: Math.min(parent.height, parent.width) * 0.5
-               height: width
-               radius: 29
-               anchors.centerIn: parent
-           }
-           ListView {
-               left: parent.left
-               bottom: parent.bottom
-               height: 100
-               width: 300
-           }
+            Rectangle {
+                id: albumCover
+                width: Math.min(parent.height, parent.width) * 0.5
+                height: width
+                radius: 29
+                anchors.centerIn: parent
+            }
+            ImportMusicButton {
+                anchors.bottom: parent.bottom
+                anchors.right: parent.right
+            }
+
     }
             // Bottom nav bar
         Rectangle {
