@@ -22,6 +22,8 @@ qt_add_qml_module(appglass-music-player
             Customizations/PlayButton.qml
             Customizations/PreviousButton.qml
             QML_FILES Customizations/NextButton.qml
+            QML_FILES Customizations/ImportMusicButton.qml
+            SOURCES Backend/musiclibary.h Backend/musiclibary.cpp
 
 
         )
@@ -31,6 +33,7 @@ qt_add_qml_module(appglass-music-player
             Customizations/Icons/Pause.svg
             Customizations/Icons/Previous.svg
             Customizations/Icons/Next.svg
+            Customizations/Icons/Import_Music_Short.png
     )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
