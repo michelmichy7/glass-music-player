@@ -8,7 +8,7 @@ class MusicLibary : public QObject
     Q_OBJECT
 public:
     explicit MusicLibary(QObject *parent = nullptr);
-    QStringList musicFiles() const;
+    QStringList musicFiles();
 
 signals:
 };

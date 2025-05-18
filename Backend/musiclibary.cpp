@@ -7,5 +7,6 @@ MusicLibary::MusicLibary(QObject *parent)
 }
 
 QStringList MusicLibary::musicFiles() {
-
+    QStringList extensions;
+    extensions << "*.ogg" << ".mp3";
 }
