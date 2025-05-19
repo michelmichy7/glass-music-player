@@ -28,19 +28,46 @@ ApplicationWindow  {
             Layout.fillWidth: true
 
             Rectangle {
-                color: "#D9D9D9"
+                color: "#F1F1F1"
                 anchors.fill: parent
                 Layout.fillWidth: true
                 Layout.fillHeight: true
             }
 
+
+
             Rectangle {
                 id: albumCover
                 width: Math.min(parent.height, parent.width) * 0.5
                 height: width
-                radius: 29
+
                 anchors.centerIn: parent
+                radius: 29
+                z: 1
             }
+
+                ShaderEffectSource {
+                    id: radSquare
+                    sourceItem: albumCover
+                    hideSource: true
+                    live: true
+                }
+
+                MultiEffect {
+                    source: albumCover
+                    anchors.centerIn: parent
+
+                    width: radSquare.width
+                    height: radSquare.height
+                    shadowEnabled: true
+                    shadowColor: "black"
+                    shadowBlur: 1
+                    z: 0
+            }
+
+        }
+
+
             ImportMusicButton {
                 anchors.bottom: parent.bottom
                 anchors.right: parent.right
@@ -48,7 +75,6 @@ ApplicationWindow  {
                 anchors.rightMargin: 10
             }
 
-    }
             // Bottom nav bar
         Rectangle {
             Layout.fillWidth: parent
@@ -71,9 +97,8 @@ ApplicationWindow  {
                 }
                 NextButton {
                 }
-
-
             }
+
             Slider {
                Layout.alignment: Qt.AlignHCenter
            }
