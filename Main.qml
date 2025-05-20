@@ -26,12 +26,25 @@ ApplicationWindow  {
             id: contentArea
             Layout.fillHeight: true
             Layout.fillWidth: true
+            implicitHeight: 200
 
             Rectangle {
+                // Main Background
                 color: "#F1F1F1"
                 anchors.fill: parent
                 Layout.fillWidth: true
                 Layout.fillHeight: true
+                z: 0
+            }
+
+            Rectangle {
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.top: parent.top
+                anchors.topMargin: 40
+                color: "#141414"
+                width: 200
+                height: 40
+                radius: 29
             }
 
 
@@ -40,47 +53,46 @@ ApplicationWindow  {
                 id: albumCover
                 width: Math.min(parent.height, parent.width) * 0.5
                 height: width
+                color: "white"
 
                 anchors.centerIn: parent
                 radius: 29
+                z: 2
+            }
+
+
+            MultiEffect {
+                source: albumCover
+                anchors.centerIn: parent
+
+                width: albumCover.width
+                height: albumCover.height
+                shadowEnabled: true
+                shadowColor: "#141414"
+                //shadowBlur: 1
                 z: 1
-            }
-
-                ShaderEffectSource {
-                    id: radSquare
-                    sourceItem: albumCover
-                    hideSource: true
-                    live: true
-                }
-
-                MultiEffect {
-                    source: albumCover
-                    anchors.centerIn: parent
-
-                    width: radSquare.width
-                    height: radSquare.height
-                    shadowEnabled: true
-                    shadowColor: "black"
-                    shadowBlur: 1
-                    z: 0
-            }
+                //shadowVerticalOffset: 9
+                autoPaddingEnabled: true
+        }
 
         }
 
 
-            ImportMusicButton {
+            /*ImportMusicButton {
                 anchors.bottom: parent.bottom
                 anchors.right: parent.right
                 anchors.bottomMargin: 10
                 anchors.rightMargin: 10
-            }
+            }*/
 
             // Bottom nav bar
         Rectangle {
             Layout.fillWidth: parent
             height: 90
             width: parent.width
-            color: "#EBEBEB"
+            color: "#141414"
+            topLeftRadius: 9
+            topRightRadius:9
 
 
         ColumnLayout {
