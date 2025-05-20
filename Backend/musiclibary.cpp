@@ -1,5 +1,7 @@
 #include "musiclibary.h"
 
+
+
 MusicLibary::MusicLibary(QObject *parent)
     : QObject{parent}
 {
@@ -7,5 +9,8 @@ MusicLibary::MusicLibary(QObject *parent)
 }
 
 QStringList MusicLibary::musicFiles() {
+    QStringList extensions;
+    extensions << "*.ogg" << ".mp3";
+
 
 }
