@@ -4,6 +4,8 @@ import QtQuick.Controls.Imagine
 import QtQuick.Effects
 import QtQuick.Layouts
 
+import CodeMg 1.0
+
 import "Customizations"
 
 
@@ -15,6 +17,10 @@ ApplicationWindow  {
     title: qsTr("Music Player")
     color: 'white';
     id: windowqq
+
+    Backend {
+        id: backend
+    }
 
     //Main column layout
     ColumnLayout {
@@ -50,6 +56,8 @@ ApplicationWindow  {
 
 
             Rectangle {
+
+
                 id: albumCover
                 width: Math.min(parent.height, parent.width) * 0.5
                 height: width
@@ -58,6 +66,31 @@ ApplicationWindow  {
                 anchors.centerIn: parent
                 radius: 29
                 z: 2
+
+                Rectangle {
+                    id: overlay
+                    anchors.fill: parent
+                    visible: false
+                    color: "gray"
+                    radius: parent.radius
+                    opacity: 0.5
+
+                    BlackPaintedMusicImport {
+                        anchors.centerIn: parent
+                    }
+                }
+
+                MouseArea {
+                    anchors.fill: parent
+                    hoverEnabled: true
+                    onEntered: {
+                        overlay.visible = true
+                    }
+                    onExited: {
+                        overlay.visible = false
+                    }
+                    onClicked: backend.importLibary()
+                }
             }
 
 
@@ -106,6 +139,10 @@ ApplicationWindow  {
                 PreviousButton {
                 }
                 PlayButton {
+                    MouseArea {
+                        anchors.fill: parent
+                        onClicked: backend.playMusic()
+                    }
                 }
                 NextButton {
                 }
